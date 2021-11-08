@@ -108,5 +108,23 @@ This particular 7-segment display uses an I2C backpack to take advantage of the 
 2) Using a Male/Male Jumper cable, connect one of the PWM pins to the positive end of the Piezo speaker 
 
 
+## Build Instructions - Software 
+After setting up the hardware components, getting the game to run is as simple as downloading the programs in the Porject 01 Folder and running the code to play the game
+
+1) Download Main_game.py
+2) Download the run script simply titled "run"
+3) Connect your PocketBeagle to your computer, and access "Cloud9," the cloud-based integrated development environment that the PocketBeagle uses. 
+4) Make a directory in Cloud 9 to place in Main_game.py and "run" 
+5) In the Linux command terminal, navigate to the directory containing both the Main_game script and the run script. 
+6) Once you have navigated to the correct location, type "python3 run" in the Linux command terminal. 
+
+
+**NOTE: If the game does not load, you will have to change the permission on the "run" script to make it executable. To do this, in the Linux Command terminal, type: chmod 755 run. This will give the run script execution permission** 
+
+
+## Operation Instructions
+After setting up both the hardware and the software, the game is ready to be played. To play the game, execute the run script as discussed above. The game should then boot up and initialize the hardware components. The game begins with the game backstory and instructions being displayed on the SPI display. After that, a character, in this case Dexter from the cartoon "Dexter's Laboratory," will appear. The game will prompt you to click the arcade button to move forward. The way the game is programmed makes it so that the screen is updated every 15 button clicks. This will move the image forward on the screen by a certain distance by changing the position of the pixels specified by the Python "paste" function in the "PILLOW" library. After 60 button clicks, Dexter will appear at the right end of the screen and the user will be prompted with the message that they've won. Presently, the criteria for losing the game is such that if the player holds the button for longer than 3 seconds they will lose and be prompted with a message on the SPI Display. Future implementations of this project will include a more challenging game feature, wherein the user has to race against a timer to win. 
+
+
 
 
