@@ -97,6 +97,16 @@ This particular 7-segment display uses an I2C backpack to take advantage of the 
 3)  Supply a 3.3V voltage supply to the "+" connection on the I2C backpack
 4)  Ground the "-" connection on the I2C backpack
 
-**NOTE: for steps 3 and 4, it is recommended to supply 3.3V to the positive power rail of the breadboard, and to GND the negative rail using the same pins from the PocketBeagle as in 
+**NOTE: for steps 3 and 4, it is recommended to supply 3.3V to the positive power rail of the breadboard, and to GND the negative rail using the same pins from the PocketBeagle as in the arcade button wiring
+
+
+### Piezo Buzzer Setup
+
+
+*Wiring*
+1) Ground the negative end of the Piezo speaker
+2) Using a Male/Male Jumper cable, connect one of the PWM pins to the positive end of the Piezo speaker 
+
+
 
 
