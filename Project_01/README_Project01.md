@@ -26,6 +26,7 @@ Setting up the PocketBeagle requires soldering
 - Not breathe in the fumes of the solder
 - Always be aware of where your end of your hot iron is
 - Always turn off the iron when not in use
+- Wear eye protection
 
 1) Solder Long Leads with 100 mil female headers onto the outside rows of the PocketBeagle. Make sure the headers are vertically placed
 2) Create a solder bridge between the USB host pins (ID to GND) and (VB to VI) in the P1 header
@@ -66,8 +67,36 @@ Using Male/Male jumper wires, make the following connections from (SPI to Pocket
 Setting up the Arcade Button requires soldering. Be sure to utilize the same precautions as in the steps above.
 
 *Soldering*
-1) Strip a 
+1) Strip an electrical wire at both ends
+2) Loop one end through a hole underneath the arcade button to provide a strong mechanical connections. 
+3) Solder this connection to provide a good electrical connection
+4) Connect the other end of the stripped wire to one end of a Male/Male jumper cable by wrapping the wire around the pin.
+5) Solder this connection for electrical security
+6) Repeat steps 1-5 for the remaining three holes underneath the arcade button 
 
 
+*Wiring*
+ 
+ 
+ Using Male/Male jumper cables, make the following connections 
+   1) Ground the two cables on either side of the ("-") symbol underneath the button. *It is recommended to ground these with the GND from the PocketBeagle located on P2_21. For optimal results, use a separate half-breadboard for the button connection, with the (-) rail grounded to this pin on the PocketBeagle.* 
+   2) Attach the cable from the ("+") side of the symbol underneath the button to a 3.3V power connection on the PocketBeagle. *It is recommended to supply 3.3V from P2_23 on the positive power rail of the half-breadboard recommended in step 1.*
+   3) Attach the last remaining jumper cable such that it shares a row with a 1 kOhm pullup resistor (A pullup resistor should be connected from the positive rail on the half breadboard to the row it is sharing with the jumper cable) and a connection leading from a GPIO connection on the PocketBeagle to the same row. *For the same results, use GPIO59 (P2_2)* 
+
+### 4 Digit, 7-Segment Display Setup 
+This particular 7-segment display uses an I2C backpack to take advantage of the PocketBeagle's I2C connection capacilities. Connect this display to another half-sized solderless breadboard (separate from the half-sized solderless breadboard used for the button circuit) and make the following connections: 
+
+
+*Wiring*
+1) Attach one end of a Male/Male jumper cable to pin P2_9 (SCL) on the PocketBeagle. Attach the other end of the jumper cable to the "C" connection fromn the I2C backpack. 
+2) Attach one end of a Male/Male jumper cable to pin P2_11 (SDA) on the PocketBeagle. Attach the other end of the jumper cable to the "D" connection from the I2C backpack. 
+
+
+**NOTE: connections 1 and 2 require 1 kOhm pullup resistors as described in the Arcade Button  Setup *Wiring* Section. Please consult for how to wire a pullup resistor** 
+
+3)  Supply a 3.3V voltage supply to the "+" connection on the I2C backpack
+4)  Ground the "-" connection on the I2C backpack
+
+**NOTE: for steps 3 and 4, it is recommended to supply 3.3V to the positive power rail of the breadboard, and to GND the negative rail using the same pins from the PocketBeagle as in 
 
 
